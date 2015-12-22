@@ -16,6 +16,11 @@
 		3BED41721C28D71600AE6484 /* iOSSQLDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BED41711C28D71600AE6484 /* iOSSQLDemoTests.m */; };
 		3BED417D1C28D71600AE6484 /* iOSSQLDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BED417C1C28D71600AE6484 /* iOSSQLDemoUITests.m */; };
 		3BED418B1C28DC4000AE6484 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BED418A1C28DC4000AE6484 /* libsqlite3.tbd */; };
+		3BED41981C292F0E00AE6484 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BED418E1C292F0E00AE6484 /* FMDatabase.m */; };
+		3BED41991C292F0E00AE6484 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BED41901C292F0E00AE6484 /* FMDatabaseAdditions.m */; };
+		3BED419A1C292F0E00AE6484 /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BED41921C292F0E00AE6484 /* FMDatabasePool.m */; };
+		3BED419B1C292F0E00AE6484 /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BED41941C292F0E00AE6484 /* FMDatabaseQueue.m */; };
+		3BED419C1C292F0E00AE6484 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BED41971C292F0E00AE6484 /* FMResultSet.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +58,17 @@
 		3BED417C1C28D71600AE6484 /* iOSSQLDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iOSSQLDemoUITests.m; sourceTree = "<group>"; };
 		3BED417E1C28D71600AE6484 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3BED418A1C28DC4000AE6484 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		3BED418D1C292F0E00AE6484 /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
+		3BED418E1C292F0E00AE6484 /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
+		3BED418F1C292F0E00AE6484 /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
+		3BED41901C292F0E00AE6484 /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseAdditions.m; sourceTree = "<group>"; };
+		3BED41911C292F0E00AE6484 /* FMDatabasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabasePool.h; sourceTree = "<group>"; };
+		3BED41921C292F0E00AE6484 /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePool.m; sourceTree = "<group>"; };
+		3BED41931C292F0E00AE6484 /* FMDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseQueue.h; sourceTree = "<group>"; };
+		3BED41941C292F0E00AE6484 /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseQueue.m; sourceTree = "<group>"; };
+		3BED41951C292F0E00AE6484 /* FMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDB.h; sourceTree = "<group>"; };
+		3BED41961C292F0E00AE6484 /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
+		3BED41971C292F0E00AE6484 /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +100,7 @@
 		3BED414B1C28D71600AE6484 = {
 			isa = PBXGroup;
 			children = (
+				3BED418C1C292EF900AE6484 /* FMDB */,
 				3BED418A1C28DC4000AE6484 /* libsqlite3.tbd */,
 				3BED41561C28D71600AE6484 /* iOSSQLDemo */,
 				3BED41701C28D71600AE6484 /* iOSSQLDemoTests */,
@@ -142,6 +159,25 @@
 				3BED417E1C28D71600AE6484 /* Info.plist */,
 			);
 			path = iOSSQLDemoUITests;
+			sourceTree = "<group>";
+		};
+		3BED418C1C292EF900AE6484 /* FMDB */ = {
+			isa = PBXGroup;
+			children = (
+				3BED418D1C292F0E00AE6484 /* FMDatabase.h */,
+				3BED418E1C292F0E00AE6484 /* FMDatabase.m */,
+				3BED418F1C292F0E00AE6484 /* FMDatabaseAdditions.h */,
+				3BED41901C292F0E00AE6484 /* FMDatabaseAdditions.m */,
+				3BED41911C292F0E00AE6484 /* FMDatabasePool.h */,
+				3BED41921C292F0E00AE6484 /* FMDatabasePool.m */,
+				3BED41931C292F0E00AE6484 /* FMDatabaseQueue.h */,
+				3BED41941C292F0E00AE6484 /* FMDatabaseQueue.m */,
+				3BED41951C292F0E00AE6484 /* FMDB.h */,
+				3BED41961C292F0E00AE6484 /* FMResultSet.h */,
+				3BED41971C292F0E00AE6484 /* FMResultSet.m */,
+			);
+			name = FMDB;
+			path = iOSSQLDemo/FMDB;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -275,8 +311,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				3BED415F1C28D71600AE6484 /* ViewController.m in Sources */,
+				3BED419A1C292F0E00AE6484 /* FMDatabasePool.m in Sources */,
 				3BED415C1C28D71600AE6484 /* AppDelegate.m in Sources */,
+				3BED419B1C292F0E00AE6484 /* FMDatabaseQueue.m in Sources */,
 				3BED41591C28D71600AE6484 /* main.m in Sources */,
+				3BED41981C292F0E00AE6484 /* FMDatabase.m in Sources */,
+				3BED419C1C292F0E00AE6484 /* FMResultSet.m in Sources */,
+				3BED41991C292F0E00AE6484 /* FMDatabaseAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -417,7 +458,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				INFOPLIST_FILE = iOSSQLDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.iOSSQLDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -431,7 +472,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				INFOPLIST_FILE = iOSSQLDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.iOSSQLDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -506,6 +547,7 @@
 				3BED41831C28D71600AE6484 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3BED41841C28D71600AE6484 /* Build configuration list for PBXNativeTarget "iOSSQLDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -514,6 +556,7 @@
 				3BED41861C28D71600AE6484 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3BED41871C28D71600AE6484 /* Build configuration list for PBXNativeTarget "iOSSQLDemoUITests" */ = {
 			isa = XCConfigurationList;
@@ -522,6 +565,7 @@
 				3BED41891C28D71600AE6484 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

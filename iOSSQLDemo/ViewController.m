@@ -8,10 +8,12 @@
 
 #import "ViewController.h"
 #import <sqlite3.h>
+#import "FMDB.h"
 
 @interface ViewController ()
 {
     sqlite3 *db;
+    FMDatabase *fmdb;
 }
 
 
@@ -65,15 +67,37 @@
     }
     //释放
     sqlite3_free(stmt);
+    [self testFMDB];
     // Do any additional setup after loading the view, typically from a nib.
 }
-- (void)test
+- (void)testFMDB
 {
-    double sqlite3_column_double(sqlite3_stmt*, int iCol);  // 浮点数据
-    int sqlite3_column_int(sqlite3_stmt*, int iCol); // 整型数据
-    sqlite3_int64 sqlite3_column_int64(sqlite3_stmt*, int iCol); // 长整型数据
-    const void *sqlite3_column_blob(sqlite3_stmt*, int iCol); // 二进制文本数据
-    const unsigned char *sqlite3_column_text(sqlite3_stmt*, int iCol);  // 字符串数据
+    NSString *docDic = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)lastObject];
+    NSString *fileName = [docDic stringByAppendingPathComponent:@"fmdb.db"];
+    //创建数据库，路径为空的话，在内存中创建数据库
+    fmdb = [FMDatabase databaseWithPath:fileName];
+    
+    [fmdb open];
+    //执行sql语句,增、删、改都是executeUpdate方法
+    NSString *sqlCreate =@"CREATE TABLE IF NOT EXISTS t_demo (id integer PRIMARY KEY AUTOINCREMENT,name text NOT NULL,age integer NOT NULL);";
+    BOOL res = [fmdb executeUpdate:sqlCreate];
+    NSString *sqlInsert = [NSString stringWithFormat:@"INSERT INTO t_demo (name,age) VALUES('%@','%d');",@"one",19];
+    res = [fmdb executeUpdate:sqlInsert];
+    if (!res) {
+        NSLog(@"error when creating db table");
+    } else {
+        NSLog(@"success to creating db table");
+    }
+    //执行查询
+    NSString *sqlQuery = [NSString stringWithFormat:@"SELECT id,name,age FROM t_demo;"];
+    
+    FMResultSet * rs = [fmdb executeQuery:sqlQuery];
+    while ([rs next]) {
+        int Id = [rs intForColumn:@"id"];
+        NSString * name = [rs stringForColumn:@"name"];
+        NSString * age = [rs stringForColumn:@"age"];
+        NSLog(@"id = %d, name = %@, age = %@ ", Id, name, age);
+    }
 }
 
 - (void)didReceiveMemoryWarning {
